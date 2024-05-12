@@ -36,7 +36,7 @@ The Parking Spot Reservation System is designed to streamline the process of res
 ### Installation and Setup Instructions
 1. **Clone the Repository**:
    ```
-   git clone https://github.com/your-username/parking-spot-reservation.git
+   git clone https://github.com/kafuteekito/parking-spot-reservation.git
    ```
 2. **Compile the Source Code**:
    ```
