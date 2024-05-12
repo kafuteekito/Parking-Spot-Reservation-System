@@ -1,7 +1,9 @@
 # Parking-Spot-Reservation-System
 
 **Parking Spot Reservation System**
-This is a simple C++ program for managing parking spot reservations in a parking lot. Users can book parking spots for their cars or unpark them if they decide to leave. The program provides a visual representation of the parking lot, allowing users to see available spots and those already reserved**.
+This is a simple C++ program for managing parking spot reservations in a parking lot. 
+Users can book parking spots for their cars or unpark them if they decide to leave.
+The program provides a visual representation of the parking lot, allowing users to see available spots and those already reserved.
 
 **Features**
 Parking Reservation: Users can book parking spots by specifying the row and column where they want to park their cars.
