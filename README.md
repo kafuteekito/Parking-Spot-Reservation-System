@@ -13,6 +13,6 @@ Input Validation: Input is validated to ensure that users provide valid row and 
 Exit Option: Users can exit the program at any time by entering '0' and confirming their choice.
 
 #### Menu Options:
-**Park a Car** (1): Enter the row (A-F) and column (1-10) to reserve a parking spot.
-**Unpark a Car** (2): Enter the row (A-F) and column (1-10) to cancel a parking reservation.
-**Exit** (0): Enter '0' to exit the program.
+1. **Park a Car** (1): Enter the row (A-F) and column (1-10) to reserve a parking spot.
+2. **Unpark a Car** (2): Enter the row (A-F) and column (1-10) to cancel a parking reservation.
+3. **Exit** (0): Enter '0' to exit the program.
