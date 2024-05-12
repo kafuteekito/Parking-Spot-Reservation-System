@@ -78,12 +78,9 @@ Y
 - **Description**: This test case randomly reserves parking spots at different locations and then exits the program.
 
 ### How to Use the Test Files
-1. Create a text file with one of the test cases provided above.
-2. Save the text file with an appropriate name (e.g., test_reservation.txt).
-3. Run the program and redirect the input from the test file:
-   ```
-   ./parking_system < test_reservation.txt
-   ```
+1. Copy the text from file.
+2. Run the programm in C++ compiler.
+3. Paste the input from the test file:
 
 ### Expected Output
 After running each test file, observe the output to ensure that the program behaves correctly according to the specified test case. Verify that reservations are made, canceled, or rejected as expected, and that the program exits gracefully after completing the test scenario.
