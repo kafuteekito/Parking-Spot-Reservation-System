@@ -34,5 +34,5 @@ The program provides a visual representation of the parking lot, allowing users 
 #### Presentation:
 
 ```markdown
-[Presentation on SlideShare](https://www.slideshare.net/secret/3YF50WKlVdrQk4)
+https://www.slideshare.net/secret/3YF50WKlVdrQk4
 ```
