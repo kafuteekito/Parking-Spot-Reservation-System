@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-#include <ctime>
+#include <fstream>
 #include <limits>
 
 using namespace std;
@@ -15,7 +15,7 @@ vector<vector<int>> parkingLot(ROWS, vector<int>(COLS, 0));
 void clear()
 {
 	printf("\33[2J\33[1;1H");
-}
+}   
 
 // This function shows a map of parking spaces
 void display() {
@@ -37,19 +37,16 @@ void display() {
     }
 }
 
-// This function is for booking parking spaces
+// This function for booking parking spaces
 void parkCar(int row, int col) {
     if (row >= 0 && row < ROWS && col >= 0 && col < COLS) {
         if (parkingLot[row][col] == 2) {
             parkingLot[row][col] = 1;
             char let = 'A' + row;
-            clear();
             cout << let << col + 1 << " reserved successfully." << endl;
         } else if(parkingLot[row][col] == 1) {
-            clear();
             cout << "Spot already occupied." << endl;
         } else {
-            clear();
             cout << "You can't park your car here."<<endl;
         }
     } else {
@@ -57,15 +54,13 @@ void parkCar(int row, int col) {
     }
 }
 
-// This function is for cancel parking reservation
+// This function for cancel parking reservation
 void unparkCar(int row, int col) {
     if (row >= 0 && row < ROWS && col >= 0 && col < COLS) {
         if (parkingLot[row][col] == 1) {
             parkingLot[row][col] = 2;
-            clear();
             cout << "Car unparked successfully." << endl;
         } else {
-            clear();
             cout << "Spot already empty." << endl;
         }
     } else {
@@ -97,19 +92,45 @@ void initializeParkingLot() {
         }
 }
 
-// This function for placing random number of cars already on parking lot
-void placeCars() {
-    srand(time(0));
-    int num = rand() % 36; // random number of cars can be placed
-
-    while (num > 0) {
-        int x = rand() % ROWS;
-        int y = rand() % COLS;
-
-        if (parkingLot[x][y] == 2) {
-            parkingLot[x][y] = 1; 
-            num--; 
+// This function reads the initial parking lot state from a file
+void readParkingLotFromFile(const string &filename) {
+    ifstream inputFile(filename);
+    if (inputFile)
+    {
+        for (int i = 0; i < ROWS; ++i)
+        {
+            for (int j = 0; j < COLS; ++j)
+            {
+                inputFile >> parkingLot[i][j];
+            }
         }
+        inputFile.close();
+    }
+    else
+    {
+        cerr << "Error opening input file." << endl;
+    }
+}
+
+// This function writes the updated parking lot state to a file
+void writeParkingLotToFile(const string &filename)
+{
+    ofstream outputFile(filename);
+    if (outputFile)
+    {
+        for (int i = 0; i < ROWS; ++i)
+        {
+            for (int j = 0; j < COLS; ++j)
+            {
+                outputFile << parkingLot[i][j] << " ";
+            }
+            outputFile << endl;
+        }
+        outputFile.close();
+    }
+    else
+    {
+        cerr << "Error opening output file." << endl;
     }
 }
 
@@ -126,7 +147,7 @@ int letterToRow(char letter) {
 int main() {
     clear();
     initializeParkingLot(); 
-    placeCars();
+    readParkingLotFromFile("input.txt");
     
     int choice, col;
     char row;
@@ -146,13 +167,18 @@ int main() {
 
         switch (choice) {
             case 1: {
-                cout << "Enter the row (A-F) and column (1-10) to park the car: ";
-                cin >> row >> col;
-                int rowNumber = letterToRow(row);
-                if (rowNumber != -1 && col >= 1 && col <= 10) {
-                    parkCar(rowNumber, col - 1);
-                } else {
-                    cout << "Invalid input. Please enter a valid row (A-F) and column (1-10)." << endl;
+                bool validInput = false;
+                while (!validInput) {
+                    cout << "Enter the row (A-F) and column (1-10) to unpark the car: ";
+                    cin >> row >> col;
+                    int rowNumber = letterToRow(row);
+                    if (rowNumber != -1 && col >= 1 && col <= 10) {
+                        parkCar(rowNumber, col - 1); 
+                        writeParkingLotToFile("output.txt");
+                        validInput = true;
+                    } else {
+                        cout << "Invalid input. Please enter a valid row (A-F) and column (1-10)." << endl;
+                    }
                 }
                 break;
             }
@@ -163,7 +189,8 @@ int main() {
                     cin >> row >> col;
                     int rowNumber = letterToRow(row);
                     if (rowNumber != -1 && col >= 1 && col <= 10) {
-                        unparkCar(rowNumber, col - 1); // Adjust column to 0-based index
+                        unparkCar(rowNumber, col - 1); 
+                        writeParkingLotToFile("output.txt");
                         validInput = true;
                     } else {
                         cout << "Invalid input. Please enter a valid row (A-F) and column (1-10)." << endl;
@@ -173,7 +200,6 @@ int main() {
             }
             case 0:
                 char confirmExit;
-                clear();
                 cout << "Are you sure you want to exit? (Y/N): ";
                 cin >> confirmExit;
                 if (confirmExit == 'Y' || confirmExit == 'y') {
