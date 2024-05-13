@@ -93,7 +93,7 @@ void initializeParkingLot() {
 }
 
 // This function reads the initial parking lot state from a file
-void readParkingLotFromFile(const string &filename) {
+void readParkFromFile(const string &filename) {
     ifstream inputFile(filename);
     if (inputFile)
     {
@@ -113,7 +113,7 @@ void readParkingLotFromFile(const string &filename) {
 }
 
 // This function writes the updated parking lot state to a file
-void writeParkingLotToFile(const string &filename)
+void writeParkToFile(const string &filename)
 {
     ofstream outputFile(filename);
     if (outputFile)
@@ -147,7 +147,7 @@ int letterToRow(char letter) {
 int main() {
     clear();
     initializeParkingLot(); 
-    readParkingLotFromFile("input.txt");
+    readParkFromFile("input.txt");
     
     int choice, col;
     char row;
@@ -174,7 +174,7 @@ int main() {
                     int rowNumber = letterToRow(row);
                     if (rowNumber != -1 && col >= 1 && col <= 10) {
                         parkCar(rowNumber, col - 1); 
-                        writeParkingLotToFile("output.txt");
+                        writeParkToFile("output.txt");
                         validInput = true;
                     } else {
                         cout << "Invalid input. Please enter a valid row (A-F) and column (1-10)." << endl;
@@ -190,7 +190,7 @@ int main() {
                     int rowNumber = letterToRow(row);
                     if (rowNumber != -1 && col >= 1 && col <= 10) {
                         unparkCar(rowNumber, col - 1); 
-                        writeParkingLotToFile("output.txt");
+                        writeParkToFile("output.txt");
                         validInput = true;
                     } else {
                         cout << "Invalid input. Please enter a valid row (A-F) and column (1-10)." << endl;
