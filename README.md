@@ -30,3 +30,9 @@ The program provides a visual representation of the parking lot, allowing users 
 - **Interpretation:** 
     - **Parking:** Initially, the parking spot A2 was empty (`[*]`). Upon parking a car, the status of A2 changes to reserved (`[X]`), indicating that a car is now parked in that spot.
     - **Unparking:** After unparking the car from spot A2, the status reverts to empty (`[*]`), allowing other vehicles to occupy the spot.
+
+#### Presentation:
+
+```markdown
+[Presentation on SlideShare](https://www.slideshare.net/secret/3YF50WKlVdrQk4)
+```
