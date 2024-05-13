@@ -3,8 +3,6 @@
 ### Purpose
 The test files provided below are designed to validate the functionality of the Parking Spot Reservation System. They cover various scenarios to ensure that the program behaves as expected under different conditions.
 
-Certainly! Here are the input files along with their corresponding expected output for three test scenarios:
-
 ### Test 1: Reservation of Parking Spots
 **Input File: **
 ```
