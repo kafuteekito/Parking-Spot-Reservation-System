@@ -19,6 +19,7 @@ The program provides a visual representation of the parking lot, allowing users 
 
 #### Screenshots:
 ![main page](https://github.com/kafuteekito/Parking-Spot-Reservation-System/assets/150647815/14f3ebfa-a9a7-4d15-a3ab-5d3ff1c0f163)
+
 **1) Main Page:**
 - **Description:** This screenshot depicts the main page of the program when it is initially run. It shows the parking lot layout with various parking spots marked as empty (`[*]`), reserved (`[X]`), and roads (`[-]`).
 
