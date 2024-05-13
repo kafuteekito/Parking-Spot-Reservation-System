@@ -24,6 +24,7 @@ The program provides a visual representation of the parking lot, allowing users 
 - **Description:** This screenshot depicts the main page of the program when it is initially run. It shows the parking lot layout with various parking spots marked as empty (`[*]`), reserved (`[X]`), and roads (`[-]`).
 
 ![functions showcase](https://github.com/kafuteekito/Parking-Spot-Reservation-System/assets/150647815/bab121b5-1670-4497-9cf3-22ada760458b)
+
 **2) Parking and Unparking Car on A2:**
 - **Description:** This screenshot illustrates the parking lot after a car has been parked and subsequently unparked at the location A2.
 - **Interpretation:** 
