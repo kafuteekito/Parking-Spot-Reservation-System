@@ -6,12 +6,12 @@ The test files provided below are designed to validate the functionality of the 
 ### Test 1: Reservation of Parking Spots
 **Input File: **
 ```
-0 2 2 2 2 2 2 2 2 2 
+0 1 2 2 2 2 2 2 2 2 
 0 0 0 0 0 0 0 0 0 2 
 0 2 2 2 2 2 2 2 0 2 
 0 2 2 2 2 2 2 2 0 2 
 0 0 0 0 0 0 0 0 0 2 
-2 2 2 2 2 2 2 2 2 2 
+2 2 1 1 1 2 2 1 1 2 
 ```
 
 **Input in Console: **
@@ -28,12 +28,12 @@ Y
 ```
 Parking Lot:
    1  2  3  4  5  6  7  8  9  10
-A [-][*][*][*][*][*][*][*][*][*]
+A [-][X][*][*][*][*][*][*][*][*]
 B [-][-][-][-][-][-][-][-][-][*]
 C [-][*][*][*][*][*][*][*][-][*]
 D [-][*][*][*][*][*][*][*][-][*]
 E [-][-][-][-][-][-][-][-][-][*]
-F [*][*][*][*][*][*][*][*][*][*]
+F [*][*][X][X][X][*][*][X][X][*]
 This is Parking Spot Reservation System program
 You can book your car on [*] spots and [X] spots are already reserved
 Press 1 to park a car and 2 to unpark a car, or 0 to exit: 1 
@@ -41,12 +41,12 @@ Enter the row (A-F) and column (1-10) to unpark the car: C 2
 C2 reserved successfully.
 Parking Lot:
    1  2  3  4  5  6  7  8  9  10  
-A [-][*][*][*][*][*][*][*][*][*]
+A [-][X][*][*][*][*][*][*][*][*]
 B [-][-][-][-][-][-][-][-][-][*]
 C [-][X][*][*][*][*][*][*][-][*]
 D [-][*][*][*][*][*][*][*][-][*]
 E [-][-][-][-][-][-][-][-][-][*]
-F [*][*][*][*][*][*][*][*][*][*]
+F [*][*][X][X][X][*][*][X][X][*]
 This is Parking Spot Reservation System program
 You can book your car on [*] spots and [X] spots are already reserved
 Press 1 to park a car and 2 to unpark a car, or 0 to exit: 1
@@ -54,12 +54,12 @@ Enter the row (A-F) and column (1-10) to unpark the car: D 6
 D6 reserved successfully.
 Parking Lot:
    1  2  3  4  5  6  7  8  9  10  
-A [-][*][*][*][*][*][*][*][*][*]
+A [-][X][*][*][*][*][*][*][*][*]
 B [-][-][-][-][-][-][-][-][-][*]
 C [-][X][*][*][*][*][*][*][-][*]
 D [-][*][*][*][*][X][*][*][-][*]
 E [-][-][-][-][-][-][-][-][-][*]
-F [*][*][*][*][*][*][*][*][*][*]
+F [*][*][X][X][X][*][*][X][X][*]
 This is Parking Spot Reservation System program
 You can book your car on [*] spots and [X] spots are already reserved
 Press 1 to park a car and 2 to unpark a car, or 0 to exit: 0
@@ -69,24 +69,24 @@ Exiting program.
 
 **Output file: **
 ```
-0 2 2 2 2 2 2 2 2 2 
+0 1 2 2 2 2 2 2 2 2 
 0 0 0 0 0 0 0 0 0 2 
 0 1 2 2 2 2 2 2 0 2 
 0 2 2 2 2 1 2 2 0 2 
 0 0 0 0 0 0 0 0 0 2 
-2 2 2 2 2 2 2 2 2 2 
+2 2 1 1 1 2 2 1 1 2 
 ```
 - **Description**: This test case verifies the reservation of parking spots in the third row column 2 and forth row column 6. It reserves spots, and then exits the program.
   
 ### Test 2: Cancellation of Parking Reservation
 **Input file: **
 ```
-0 2 2 2 2 2 2 2 2 2 
+0 1 2 2 2 2 2 2 2 2 
 0 0 0 0 0 0 0 0 0 2 
 0 1 2 2 2 2 2 2 0 2 
 0 2 2 2 2 1 2 2 0 2 
 0 0 0 0 0 0 0 0 0 2 
-2 2 2 2 2 2 2 2 2 2 
+2 2 1 1 1 2 2 1 1 2 
 ```
 
 **Input In Console: **
@@ -102,12 +102,12 @@ Y
 ```
 Parking Lot:
    1  2  3  4  5  6  7  8  9  10
-A [-][*][*][*][*][*][*][*][*][*]
+A [-][X][*][*][*][*][*][*][*][*]
 B [-][-][-][-][-][-][-][-][-][*]
 C [-][X][*][*][*][*][*][*][-][*]
 D [-][*][*][*][*][X][*][*][-][*]
 E [-][-][-][-][-][-][-][-][-][*]
-F [*][*][*][*][*][*][*][*][*][*]
+F [*][*][X][X][X][*][*][X][X][*]
 This is Parking Spot Reservation System program
 You can book your car on [*] spots and [X] spots are already reserved
 Press 1 to park a car and 2 to unpark a car, or 0 to exit: 1
@@ -115,12 +115,12 @@ Enter the row (A-F) and column (1-10) to unpark the car: C 4
 C4 reserved successfully.
 Parking Lot:
    1  2  3  4  5  6  7  8  9  10  
-A [-][*][*][*][*][*][*][*][*][*]
+A [-][X][*][*][*][*][*][*][*][*]
 B [-][-][-][-][-][-][-][-][-][*]
 C [-][X][*][X][*][*][*][*][-][*]
 D [-][*][*][*][*][X][*][*][-][*]
 E [-][-][-][-][-][-][-][-][-][*]
-F [*][*][*][*][*][*][*][*][*][*]
+F [*][*][X][X][X][*][*][X][X][*]
 This is Parking Spot Reservation System program
 You can book your car on [*] spots and [X] spots are already reserved
 Press 1 to park a car and 2 to unpark a car, or 0 to exit: 2
@@ -128,12 +128,12 @@ Enter the row (A-F) and column (1-10) to unpark the car: C 4
 Car unparked successfully.
 Parking Lot:
    1  2  3  4  5  6  7  8  9  10  
-A [-][*][*][*][*][*][*][*][*][*]
+A [-][X][*][*][*][*][*][*][*][*]
 B [-][-][-][-][-][-][-][-][-][*]
 C [-][X][*][*][*][*][*][*][-][*]
 D [-][*][*][*][*][X][*][*][-][*]
 E [-][-][-][-][-][-][-][-][-][*]
-F [*][*][*][*][*][*][*][*][*][*]
+F [*][*][X][X][X][*][*][X][X][*]
 This is Parking Spot Reservation System program
 You can book your car on [*] spots and [X] spots are already reserved
 Press 1 to park a car and 2 to unpark a car, or 0 to exit: 0
@@ -142,12 +142,12 @@ Exiting program.
 ```
 **Output file:**
 ```
-0 2 2 2 2 2 2 2 2 2 
+0 1 2 2 2 2 2 2 2 2 
 0 0 0 0 0 0 0 0 0 2 
 0 1 2 2 2 2 2 2 0 2 
 0 2 2 2 2 1 2 2 0 2 
 0 0 0 0 0 0 0 0 0 2 
-2 2 2 2 2 2 2 2 2 2 
+2 2 1 1 1 2 2 1 1 2 
 ```
 
 - **Description**: This test case checks the cancellation of a parking reservation. It first reserves a spot at row C, column 4, and then cancels the reservation for the same spot before exiting.
@@ -155,12 +155,12 @@ Exiting program.
 ### Test 3: Invalid Input Handling
 **Input file: **
 ```
-0 2 2 2 2 2 2 2 2 2 
+0 1 2 2 2 2 2 2 2 2 
 0 0 0 0 0 0 0 0 0 2 
 0 1 2 2 2 2 2 2 0 2 
 0 2 2 2 2 1 2 2 0 2 
 0 0 0 0 0 0 0 0 0 2 
-2 2 2 2 2 2 2 2 2 2
+2 2 1 1 1 2 2 1 1 2 
 ```
 
 
@@ -179,24 +179,24 @@ Y
 ```
 Parking Lot:
    1  2  3  4  5  6  7  8  9  10
-A [-][*][*][*][*][*][*][*][*][*]
+A [-][X][*][*][*][*][*][*][*][*]
 B [-][-][-][-][-][-][-][-][-][*]
 C [-][X][*][*][*][*][*][*][-][*]
 D [-][*][*][*][*][X][*][*][-][*]
 E [-][-][-][-][-][-][-][-][-][*]
-F [*][*][*][*][*][*][*][*][*][*]
+F [*][*][X][X][X][*][*][X][X][*]
 This is Parking Spot Reservation System program
 You can book your car on [*] spots and [X] spots are already reserved
 Press 1 to park a car and 2 to unpark a car, or 0 to exit: 3
 Invalid choice. Please try again.
 Parking Lot:
    1  2  3  4  5  6  7  8  9  10  
-A [-][*][*][*][*][*][*][*][*][*]
+A [-][X][*][*][*][*][*][*][*][*]
 B [-][-][-][-][-][-][-][-][-][*]
 C [-][X][*][*][*][*][*][*][-][*]
 D [-][*][*][*][*][X][*][*][-][*]
 E [-][-][-][-][-][-][-][-][-][*]
-F [*][*][*][*][*][*][*][*][*][*]
+F [*][*][X][X][X][*][*][X][X][*]
 This is Parking Spot Reservation System program
 You can book your car on [*] spots and [X] spots are already reserved
 Press 1 to park a car and 2 to unpark a car, or 0 to exit: 1
@@ -208,12 +208,12 @@ Enter the row (A-F) and column (1-10) to unpark the car: f 10
 F10 reserved successfully.
 Parking Lot:
    1  2  3  4  5  6  7  8  9  10  
-A [-][*][*][*][*][*][*][*][*][*]
+A [-][X][*][*][*][*][*][*][*][*]
 B [-][-][-][-][-][-][-][-][-][*]
 C [-][X][*][*][*][*][*][*][-][*]
 D [-][*][*][*][*][X][*][*][-][*]
 E [-][-][-][-][-][-][-][-][-][*]
-F [*][*][*][*][*][*][*][*][*][X]
+F [*][*][X][X][X][*][*][X][X][X]
 This is Parking Spot Reservation System program
 You can book your car on [*] spots and [X] spots are already reserved
 Press 1 to park a car and 2 to unpark a car, or 0 to exit: 0
